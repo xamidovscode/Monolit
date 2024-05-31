@@ -5,7 +5,7 @@ import bcrypt
 
 
 def index(request):
-    users = User.objects.all()
+    users = User.objects.all().order_by('-id')
     return render(request, 'login_register_app/index.html', {'users': users})
 
 

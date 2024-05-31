@@ -10,34 +10,28 @@
 <body>
     <div class="container">
         <nav class="navbar navbar-dark rounded-bottom bg-dark text-white justify-content-between mb-4">
-            <a class="navbar-brand">Cool Website</a>
+            <a class="navbar-brand">Xamidov's Website</a>
         </nav>
     </div>
 
     <div class="container">
         <div class="body row">
-            <!-- REGISTRATION FORM -->
             <div class="col-xs-6 col-md-6">
                 <h4>Register:</h4>
                 <form action="/register" method="post">
                     {% csrf_token %}
-                    <!-- FIRST NAME -->
                     <div class="form-group">
                         <input type="text" class="form-control" name="first_name" placeholder="First Name">
                     </div>
-                    <!-- LAST NAME -->
                     <div class="form-group">
                         <input type="text" class="form-control" name="last_name" placeholder="Last Name">
                     </div>
-                    <!-- EMAIL -->
                     <div class="form-group">
                         <input type="text" class="form-control" name="email" placeholder="Email">
                     </div>
-                    <!-- PASSWORD -->
                     <div class="form-group">
                         <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
-                    <!-- CONFIRM PASSWORD -->
                     <div class="form-group">
                         <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password">
                     </div>
@@ -52,7 +46,6 @@
                 </form>
             </div>
 
-            <!-- REGISTERED USERS LIST -->
             <div class="col-xs-6 col-md-6">
                 <h4>Registered Users:</h4>
                 <table class="table table-striped">

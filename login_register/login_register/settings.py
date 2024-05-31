@@ -25,7 +25,7 @@ SECRET_KEY = 'oz)q^dd#sbk2%+fk%0y-^bam!d9*b-u)vx-un0+rq^-v=45og3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['xamidov.pythonanywhere.com', "*"]
 
 
 # Application definition
