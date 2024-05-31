@@ -47,15 +47,13 @@ class UserManager(models.Manager):
     
     def login_validator(self, postData):
         errors = {}
-        # Validation Rules for Login Email
         if len(postData['email']) < 1:
             errors["email"] = "Email is required"
         elif not EMAIL_REGEX.match(postData['email']):
             errors["email"] = "Invalid Email Address"
-        elif not User.objects.filter(email = postData['email']):
+        elif not User.objects.filter(email=postData['email']):
             errors["email"] = "This account does not exist. Please register."
             
-        # Validation Rules for Login Password
         if len(postData['password']) < 1:
             errors["password"] = "Password is required"
         else:

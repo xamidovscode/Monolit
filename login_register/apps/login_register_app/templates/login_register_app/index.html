@@ -1,4 +1,3 @@
-<!-- By Andy Nguyen -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +12,7 @@
         <nav class="navbar navbar-dark rounded-bottom bg-dark text-white justify-content-between mb-4">
             <a class="navbar-brand">Cool Website</a>
         </nav>
-    </div>    
+    </div>
 
     <div class="container">
         <div class="body row">
@@ -42,7 +41,7 @@
                     <div class="form-group">
                         <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password">
                     </div>
-                    <a href="/register"><button type="submit" class="btn btn-primary">Register</button></a>
+                    <button type="submit" class="btn btn-primary">Register</button>
                     {% if messages %}
                         {% for message in messages %}
                             {% if "register" in message.tags %}
@@ -53,26 +52,27 @@
                 </form>
             </div>
 
-            <!-- LOGIN FORM -->
+            <!-- REGISTERED USERS LIST -->
             <div class="col-xs-6 col-md-6">
-                <h4>Login:</h4>
-                <form action="/login" method="post">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="email" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" name="password" placeholder="Password">
-                    </div>
-                    <a href="/login"><button type="submit" class="btn btn-primary">Login</button></a>
-                    {% if messages %}
-                        {% for message in messages %}
-                            {% if "login" in message.tags %}
-                                <p{% if message.tags %} class="{{ message.tags }} text-danger mt-1"{% endif %}>{{ message }}</p>
-                            {% endif %}
+                <h4>Registered Users:</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                            <tr>
+                                <td>{{ user.first_name }}</td>
+                                <td>{{ user.last_name }}</td>
+                                <td>{{ user.email }}</td>
+                            </tr>
                         {% endfor %}
-                    {% endif %}
-                </form>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
